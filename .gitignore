@@ -1,0 +1,5 @@
+# Force the use of *.yaml for YAML files as this is the 'standard' extension to use.  This was chosen over *.yml because *.yaml is more widely used by others (e.g. required for Kargo Render config file).
+*.yml
+
+# Ignore IDE files.
+.idea/

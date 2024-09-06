@@ -1,0 +1,26 @@
+name: Kargo Render
+
+on:
+  push:
+    branches:
+      # Only run when pushing to the trunk
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  render-manifests:
+    name: Render Manifests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        targetBranch:
+          - cluster/hub-cluster
+    steps:
+      - name: kargo-render-by-akuity
+        uses: akuity/kargo-render-action@v0.1.0-rc.40
+        with:
+          personalAccessToken: ${{ secrets.GITHUB_TOKEN }}
+          targetBranch: ${{ matrix.targetBranch }}

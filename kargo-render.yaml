@@ -1,0 +1,10 @@
+configVersion: v1alpha1
+branchConfigs:
+  - name: cluster/hub-cluster
+    appConfigs:
+      # --------------- Resources ---------------
+      # Red Hat Advanced Cluster Management (RHACM)
+      rhacm-resources:
+        configManagement:
+          path: components/rhacm/resources/overlays/hub-cluster
+        outputPath: components/rhacm
